@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C72682B-F2AD-40EA-8269-1CD2622F39C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HumanResources</RootNamespace>
+    <AssemblyName>HumanResources</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Konfiguracja">
+      <HintPath>..\..\Konfiguracja\Konfiguracja\obj\Release\Konfiguracja.dll</HintPath>
+    </Reference>
+    <Reference Include="Logi">
+      <HintPath>..\..\Logi\Logi\bin\Release\Logi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ustawienia, Version=3.3.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Ustawienia\Ustawienia\bin\Release\Ustawienia.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calendar\CalendarManager.cs" />
+    <Compile Include="Calendar\DoubleBufferedTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calendar\ICalendar.cs" />
+    <Compile Include="Calendar\CalendarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Calendar\CalendarControl.Designer.cs">
+      <DependentUpon>CalendarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\LabelDayOff.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EmployeeFinances\Additions\AdditionManager.cs" />
+    <Compile Include="EmployeeFinances\ChangeOptions.cs" />
+    <Compile Include="EmployeeFinances\EmployeeFinanse.cs" />
+    <Compile Include="EmployeeFinances\Additions\Addition.cs" />
+    <Compile Include="EmployeeFinances\Advances\AdvanceManager.cs" />
+    <Compile Include="EmployeeFinances\Additions\AdditionType.cs" />
+    <Compile Include="EmployeeFinances\Advances\Advance.cs" />
+    <Compile Include="ConnectionToDB.cs" />
+    <Compile Include="Employees\Prints\HolidayRequest.cs" />
+    <Compile Include="Employees\RateType.cs" />
+    <Compile Include="Exceptions\AlreadyExistsException.cs" />
+    <Compile Include="Exceptions\CancelException.cs" />
+    <Compile Include="Exceptions\WrongDateException.cs" />
+    <Compile Include="MainForm\Salary\CalculateSalary.cs" />
+    <Compile Include="MainForm\Salary\MainFormSalary.cs" />
+    <Compile Include="MainForm\Statistics\LoanStatistics.cs" />
+    <Compile Include="MainForm\Statistics\WorkStatistic.cs" />
+    <Compile Include="MainForm\WorkTime\MainFormDayOff.cs" />
+    <Compile Include="MainForm\WorkTime\MainFormIllness.cs" />
+    <Compile Include="MainForm\WorkTime\MainFormWork.cs" />
+    <Compile Include="Employees\Prints\PaymantCards.cs" />
+    <Compile Include="Salaries\Salary.cs" />
+    <Compile Include="Salaries\SalaryAddition.cs" />
+    <Compile Include="Salaries\SalaryAdvance.cs" />
+    <Compile Include="Salaries\SalaryIllness.cs" />
+    <Compile Include="Salaries\SalaryLoanInstallment.cs" />
+    <Compile Include="Salaries\SalaryWork.cs" />
+    <Compile Include="Salaries\SalaryWorkOLD.cs" />
+    <Compile Include="Salaries\SalaryDayOff.cs" />
+    <Compile Include="Settings\SortType.cs" />
+    <Compile Include="WorkTimeRecords\DayOff\DayOff.cs" />
+    <Compile Include="WorkTimeRecords\DayOff\DayOffType.cs" />
+    <Compile Include="WorkTimeRecords\Holidays.cs" />
+    <Compile Include="WorkTimeRecords\Illness\Illness.cs" />
+    <Compile Include="WorkTimeRecords\Illness\IllnessType.cs" />
+    <Compile Include="WorkTimeRecords\IWorkTime.cs" />
+    <Compile Include="WorkTimeRecords\Prints\AttendanceList.cs" />
+    <Compile Include="WorkTimeRecords\Prints\TimeRecordSheet.cs" />
+    <Compile Include="Employees\Prints\SettlementTime.cs" />
+    <Compile Include="WorkTimeRecords\Work\Work.cs" />
+    <Compile Include="WorkTimeRecords\WorkManager.cs" />
+    <Compile Include="WorkTimeRecords\WorkTime.cs" />
+    <Compile Include="WorkTimeRecords\Work\WorkType.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="EmployeeFinances\Forms\AdditionNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeFinances\Forms\AdditionNewForm.Designer.cs">
+      <DependentUpon>AdditionNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateFormat.cs" />
+    <Compile Include="Exceptions\ErrorException.cs" />
+    <Compile Include="Loans\Loan.cs" />
+    <Compile Include="Loans\LoanInstallment.cs" />
+    <Compile Include="Loans\LoanManager.cs" />
+    <Compile Include="Loans\Payment.cs" />
+    <Compile Include="Loans.Forms\LoanNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loans.Forms\LoanNewForm.Designer.cs">
+      <DependentUpon>LoanNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loans.Forms\LoanInstallmentDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loans.Forms\LoanInstallmentDetailsForm.Designer.cs">
+      <DependentUpon>LoanInstallmentDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loans.Forms\OwnRepaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loans.Forms\OwnRepaymentForm.Designer.cs">
+      <DependentUpon>OwnRepaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loans.Forms\ChangeAmountOrDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loans.Forms\ChangeAmountOrDateForm.Designer.cs">
+      <DependentUpon>ChangeAmountOrDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.Forms\TimeRecordSheetPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees.Forms\TimeRecordSheetPrintForm.Designer.cs">
+      <DependentUpon>TimeRecordSheetPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.Forms\AttendanceListPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees.Forms\AttendanceListPrintForm.Designer.cs">
+      <DependentUpon>AttendanceListPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.Forms\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees.Forms\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.Forms\EmployeeNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees.Forms\EmployeeNewForm.Designer.cs">
+      <DependentUpon>EmployeeNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees.Forms\ChangeWorkTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees.Forms\ChangeWorkTypeForm.Designer.cs">
+      <DependentUpon>ChangeWorkTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\EmployeeManager.cs" />
+    <Compile Include="Exceptions\EmptyStringException.cs" />
+    <Compile Include="Exceptions\NoAccessException.cs" />
+    <Compile Include="Exceptions\NoNullException.cs" />
+    <Compile Include="Employees\EmployeeRate.cs" />
+    <Compile Include="Employees\RateRegular.cs" />
+    <Compile Include="Employees\RateOvertime.cs" />
+    <Compile Include="Employees\Employee.cs" />
+    <Compile Include="Employees\TableView.cs" />
+    <Compile Include="Exceptions\WrongSizeStringException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Enums.cs" />
+    <Compile Include="Settings\Column.cs" />
+    <Compile Include="Settings\SetLoan.cs" />
+    <Compile Include="Settings\SetEmployee.cs" />
+    <Compile Include="EmployeeFinances\Forms\ChangeAmountDateInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeFinances\Forms\ChangeAmountDateInfoForm.Designer.cs">
+      <DependentUpon>ChangeAmountDateInfoForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Calendar\CalendarControl.resx">
+      <DependentUpon>CalendarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeFinances\Forms\AdditionNewForm.resx">
+      <DependentUpon>AdditionNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loans.Forms\LoanNewForm.resx">
+      <DependentUpon>LoanNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loans.Forms\LoanInstallmentDetailsForm.resx">
+      <DependentUpon>LoanInstallmentDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loans.Forms\OwnRepaymentForm.resx">
+      <DependentUpon>OwnRepaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loans.Forms\ChangeAmountOrDateForm.resx">
+      <DependentUpon>ChangeAmountOrDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees.Forms\TimeRecordSheetPrintForm.resx">
+      <DependentUpon>TimeRecordSheetPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees.Forms\AttendanceListPrintForm.resx">
+      <DependentUpon>AttendanceListPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees.Forms\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees.Forms\EmployeeNewForm.resx">
+      <DependentUpon>EmployeeNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees.Forms\ChangeWorkTypeForm.resx">
+      <DependentUpon>ChangeWorkTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeFinances\Forms\ChangeAmountDateInfoForm.resx">
+      <DependentUpon>ChangeAmountDateInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\nowy48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edycja48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usun48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wszystkie48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zatwierdzone48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\niezatwierdzone48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pozyczki48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\godziny_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dodatki48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ustawienia48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_firmy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kalendarz48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
