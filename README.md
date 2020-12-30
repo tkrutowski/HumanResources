@@ -1,5 +1,5 @@
 # HumanResources
-It is one module from a construction company management application written in C #.
+It is one module from a construction company management application written in C#.
 
 It is a desktop application and this particular module allows you to manage your employees.
 
